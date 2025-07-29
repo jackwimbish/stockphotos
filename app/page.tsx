@@ -129,7 +129,7 @@ export default function Home() {
                 alt="Generated stock photo"
                 width={1024}
                 height={1024}
-                className="w-full h-auto"
+                className="max-w-lg max-h-64 object-contain mx-auto"
                 priority
               />
             </div>
