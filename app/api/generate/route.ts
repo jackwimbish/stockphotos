@@ -30,7 +30,6 @@ const weirdDetails = [
   "but the filing cabinets are actually giant toasters",
   "but there's a life-sized statue of a penguin in business attire",
   "but there's a live peacock perched on someone's shoulder",
-  "but there's a sandbox in the middle of the office",
   "but everyone's shirts have random food stains that spell out words",
   "but there's a full-sized replica of Stonehenge in the background",
   "but there's a mariachi band playing quietly in the corner",
@@ -49,9 +48,6 @@ const weirdDetails = [
   "but there's a live tiger sleeping under the conference table",
   "but everyone's dress shirts have cartoon character prints",
   "but there's a full operating carnival in the office courtyard",
-  "but there's a full-sized windmill spinning in the background",
-  "but all the filing cabinets are shaped like different animals",
-  "but all the ceiling fans are actually spinning pizza wheels",
   "but it's in the style of Monty Python"
 ]
 
