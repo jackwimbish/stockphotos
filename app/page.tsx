@@ -20,8 +20,9 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
-  const generateImage = async () => {
-    if (!prompt.trim()) return
+  const generateImage = async (customPrompt?: string) => {
+    const selectedPrompt = customPrompt || prompt
+    if (!selectedPrompt.trim()) return
     
     setLoading(true)
     setError('')
@@ -32,7 +33,7 @@ export default function Home() {
       const response = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt }),
+        body: JSON.stringify({ prompt: selectedPrompt }),
       })
 
       const data = await response.json()
@@ -43,6 +44,7 @@ export default function Home() {
 
       setImageUrl(data.imageUrl)
       setWeirdDetail(data.weirdDetail)
+      if (customPrompt) setPrompt(customPrompt)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong')
     } finally {
@@ -81,7 +83,7 @@ export default function Home() {
           </div>
           
           <button
-            onClick={generateImage}
+            onClick={() => generateImage()}
             disabled={loading || !prompt.trim()}
             className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
           >
@@ -95,7 +97,7 @@ export default function Home() {
               {examplePrompts.map((example, index) => (
                 <button
                   key={index}
-                  onClick={() => setPrompt(example)}
+                  onClick={() => generateImage(example)}
                   className="text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full transition-colors"
                 >
                   {example}
