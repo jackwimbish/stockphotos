@@ -61,7 +61,7 @@ export default function Home() {
             Slightly Off Stock Photos
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Generate perfect corporate stock photos with one hilariously wrong detail. 
+            Generate perfect corporate stock photos with one slightly wrong detail. 
             98% professional, 2% completely unusable.
           </p>
         </div>
