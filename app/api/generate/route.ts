@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
     }
 
     const randomDetail = weirdDetails[Math.floor(Math.random() * weirdDetails.length)]
-    const enhancedPrompt = `${prompt}, ${randomDetail}. Professional stock photo style, high quality, corporate lighting`
+    const enhancedPrompt = `${prompt}, ${randomDetail}. Professional stock photo style, high quality, corporate lighting, photorealistic faces, clear facial features, professional headshots quality`
 
     const response = await openai.images.generate({
       model: "dall-e-3",
